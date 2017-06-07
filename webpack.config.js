@@ -86,7 +86,7 @@ module.exports = function makeWebpackConfig() {
       // Transpile .js files using babel-loader
       // Compiles ES6 and ES7 into ES5 code
       test: /\.js$/,
-      loader: 'babel-loader',
+      use: 'babel-loader',
       exclude: /node_modules/
     }, {
       // CSS LOADER
@@ -103,13 +103,19 @@ module.exports = function makeWebpackConfig() {
       // Use style-loader in development.
 
       loader: isTest ? 'null-loader' : ExtractTextPlugin.extract({
-        fallbackLoader: 'style-loader',
-        loader: [
-          {loader: 'css-loader', query: {sourceMap: true}},
-          {loader: 'postcss-loader'}
-        ],
+        fallback: 'style-loader',
+        use: ['css-loader', 'postcss-loader']
       })
-    }, {
+    }, 
+      { // sass / scss loader for webpack
+        test: /\.(sass|scss)$/,
+        use: ExtractTextPlugin.extract({
+                  fallback:'style-loader',
+                  use: ['css-loader','sass-loader', 'postcss-loader']
+                }),
+      },
+
+    {
       // ASSET LOADER
       // Reference: https://github.com/webpack/file-loader
       // Copy png, jpg, jpeg, gif, svg, woff, woff2, ttf, eot files to output
@@ -117,13 +123,13 @@ module.exports = function makeWebpackConfig() {
       // Pass along the updated reference to your code
       // You can add here any file extension you want to get copied to your output
       test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
-      loader: 'file-loader'
+      use: 'file-loader'
     }, {
       // HTML LOADER
       // Reference: https://github.com/webpack/raw-loader
       // Allow loading html through js
       test: /\.html$/,
-      loader: 'raw-loader'
+      use: 'raw-loader'
     }]
   };
 
@@ -139,7 +145,7 @@ module.exports = function makeWebpackConfig() {
         /node_modules/,
         /\.spec\.js$/
       ],
-      loader: 'istanbul-instrumenter-loader',
+      use: 'istanbul-instrumenter-loader',
       query: {
         esModules: true
       }
@@ -176,7 +182,7 @@ module.exports = function makeWebpackConfig() {
     // Render index.html
     config.plugins.push(
       new HtmlWebpackPlugin({
-        template: './src/public/index.html',
+        template: './src/assets/index.html',
         inject: 'body'
       }),
 
@@ -205,7 +211,7 @@ module.exports = function makeWebpackConfig() {
       // Copy assets from the public folder
       // Reference: https://github.com/kevlened/copy-webpack-plugin
       new CopyWebpackPlugin([{
-        from: __dirname + '/src/public'
+        from: __dirname + '/src/assets'
       }])
     )
   }
@@ -216,7 +222,7 @@ module.exports = function makeWebpackConfig() {
    * Reference: http://webpack.github.io/docs/webpack-dev-server.html
    */
   config.devServer = {
-    contentBase: './src/public',
+    contentBase: './src/assets',
     stats: 'minimal'
   };
 

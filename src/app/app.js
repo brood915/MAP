@@ -1,25 +1,8 @@
 import angular from 'angular';
+import 'bootstrap/dist/css/bootstrap.css';
+import '../assets/style/main.scss';
+import common from './common/common.module.js';
+import app_directive from './app.directive';
 
-import '../style/app.css';
-
-let app = () => {
-  return {
-    template: require('./app.html'),
-    controller: 'AppCtrl',
-    controllerAs: 'app'
-  }
-};
-
-class AppCtrl {
-  constructor() {
-    this.url = 'https://github.com/preboot/angular-webpack';
-  }
-}
-
-const MODULE_NAME = 'app';
-
-angular.module(MODULE_NAME, [])
-  .directive('app', app)
-  .controller('AppCtrl', AppCtrl);
-
-export default MODULE_NAME;
+angular.module('app', [])
+  .directive('app', app_directive);
