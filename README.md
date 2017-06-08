@@ -1,8 +1,4 @@
-# angularjs-webpack
-
-A complete, yet simple, starter for Angular using Webpack.
-
-This workflow serves as a starting point for building Angular 1.x applications using Webpack 2.x.
+# Projet for MAP
 
 * Modified https://github.com/preboot/angular-webpack for my own usage.
     - Added SASS/SCSS
@@ -13,14 +9,12 @@ This workflow serves as a starting point for building Angular 1.x applications u
 
 ### Quick start
 
-> Clone/Download the repo then edit `app.js` inside [`/src/app/app.js`](/src/app/app.js)
-
 ```bash
 # clone our repo
-$ git clone https://github.com/brood915/ngBoilerplate.git my-app
+$ git clone https://github.com/brood915/MAP.git
 
-# change directory to your app
-$ cd my-app
+# change directory to MAP
+$ cd MAP
 
 # install the dependencies with npm
 $ npm install
