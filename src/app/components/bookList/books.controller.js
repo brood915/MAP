@@ -1,6 +1,3 @@
-import books from "./bookList.json";
-
-
 export default class BooksCtrl {
   constructor(booksService) {
     this.booksService = booksService;
