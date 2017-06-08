@@ -1,4 +1,4 @@
-# Projet for MAP
+# Project for MAP
 
 * Modified https://github.com/preboot/angular-webpack for my own usage.
     - Added SASS/SCSS
