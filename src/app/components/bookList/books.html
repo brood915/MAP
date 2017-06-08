@@ -2,10 +2,13 @@
 <div class="form-group">
   <label>Search</label>
   <input type="text" class="form-control" ng-model="books.filterValue">
+  <div class="checkbox">
+    <label><input type="checkbox" value="" ng-model="books.uppercase">Intensify</label>
+  </div>
 </div>
 <div class="list-group">
     <div class="list-group-item bookList" ng-repeat='book in books.bookList | filter: books.filterValue'>
-        <div><span>Title:</span> {{book.title}}</div>
+        <div><span>Title:</span> {{books.uppercase ? (book.title | uppercase) : book.title}}</div>
         <div><span>Author:</span> {{book.author}}</div>
         <div><span>Date:</span> {{book.date}}</div>
     </div>

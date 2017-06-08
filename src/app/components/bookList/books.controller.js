@@ -6,7 +6,7 @@ export default class BooksCtrl {
     this.$scope = $scope;
     this.bookList = books;
     this.filterValue = '';
-
+    this.uppercase = false;
   }
 
  
