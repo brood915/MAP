@@ -1,24 +1,19 @@
 /* styles in src/style directory are applied to the whole page */
-body {
-  background: #0147A7;
-  color: black;
+@mixin center () {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+html, body {
+  height: 100%;
+  color: #000000;
+  text-align: center;
   display:block !important; /*prevents flash of unstyled content when ng-cloak not working*/
 }
 
-
-a {
-  color: #03A9F4;
-}
-
-main {
-  padding: 1em;
+.main {
+  min-height: 100%;
+  @include center();
   font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
-  margin-top: 50px;
-  display: block;
-}
-
-footer {
-  text-align: center;
-  font-size: 0.8em;
 }

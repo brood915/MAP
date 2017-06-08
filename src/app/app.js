@@ -1,8 +1,8 @@
 import angular from 'angular';
 import 'bootstrap/dist/css/bootstrap.css';
 import '../assets/style/main.scss';
-import common from './common/common.module.js';
-import app_directive from './app.directive';
+import components from './components/components.module';
+import appDirective from './app.directive';
 
-angular.module('app', [])
-  .directive('app', app_directive);
+angular.module('app', [components])
+  .directive('app', appDirective)
