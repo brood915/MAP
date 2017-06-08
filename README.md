@@ -6,17 +6,8 @@ This workflow serves as a starting point for building Angular 1.x applications u
 
 * Modified https://github.com/preboot/angular-webpack for my own usage.
     - Added SASS/SCSS
-    - Modified folder structure, following johnpapa's styleguide
+    - Modified folder structure
     - Changed some parts of the config to meet the latest webpack 2 requirements
-    
-* Heavily commented webpack configuration with reasonable defaults.
-* ES6, and ES7 support with babel.
-* Source maps included in all builds.
-* Development server with live reload.
-* Production builds with cache busting.
-* Testing environment using karma to run tests and jasmine as the framework.
-* Code coverage when tests are run.
-* No gulp and no grunt, just npm scripts.
 
 
 
