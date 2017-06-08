@@ -2,16 +2,12 @@ import books from "./bookList.json";
 
 
 export default class BooksCtrl {
-  constructor($scope) {
-    this.$scope = $scope;
-    this.bookList = books;
+  constructor(booksService) {
+    this.booksService = booksService;
+    this.bookList = this.booksService.books;
     this.filterValue = '';
     this.uppercase = false;
   }
-
- 
-  
-  
 }
 
-BooksCtrl.$inject = ['$scope'];  
+BooksCtrl.$inject = ['booksService'];  
