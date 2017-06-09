@@ -1,4 +1,5 @@
-<form novalidate name="myForm" class="formContainer">
+<div class="formContainer">
+<form novalidate name="myForm">
     <div class="form-group"
          ng-class = "{
            'has-success has-feedback' : (myForm.$dirty || myForm.$submitted) && myForm.title.$valid,
@@ -52,3 +53,5 @@
     </div>
     <button class="btn btn-primary" ng-click="myForm.$valid && form.handleClick()">Add</button>
 </form>
+<trash />
+</div>
