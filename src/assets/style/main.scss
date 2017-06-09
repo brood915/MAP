@@ -1,7 +1,7 @@
 @mixin center () {
 	display: flex;
 	justify-content: center;
-	align-items: flex-start;
+	align-items: center;
 }
 
 html, body {
@@ -16,4 +16,6 @@ html, body {
   @include center();
   font-family: Arial, Helvetica, sans-serif;
   padding: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
 }

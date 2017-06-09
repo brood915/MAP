@@ -1,4 +1,4 @@
-import angular from 'angular';
+
 import controller from './books.controller';
 
 export default function booksDirective () {

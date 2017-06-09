@@ -1,7 +1,25 @@
-.bookList span {
-    font-weight:bold;
+.bookList  {
+    cursor: move;
+
+    span {
+         font-weight:bold;
+    }
 }
 
 .booksContainer {
     margin: 10px;
+    flex: 2;
+}
+
+#checkbox {
+    font-weight: bold;
+}
+
+.bookInfo {
+    text-align: left;
+}
+
+//for dragAndDrop Effects
+.drag {
+    opacity: 0.5;
 }

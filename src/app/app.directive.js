@@ -3,7 +3,8 @@ import AppCtrl from './app.controller';
 
 export default function app_directive () {
   return {
-    template: require('./app.html')
+    template: require('./app.html'),
+    replace: true
   }
 };
 

@@ -1,4 +1,3 @@
-import angular from 'angular';
 import controller from './form.controller';
 
 export default function formDirective () {
