@@ -1,14 +1,10 @@
 export default class BooksCtrl {
-  constructor(booksService, $scope) {
+  constructor(booksService) {
     this.booksService = booksService;
     this.bookList = this.booksService.books;
     this.filterValue = '';
     this.uppercase = false;
-    this.$scope = $scope;
-     this.$scope.$watch('bookList', function(){console.log('haha')})
   }
-
-
 }
 
-BooksCtrl.$inject = ['booksService' , "$scope"];  
+BooksCtrl.$inject = ['booksService'];  

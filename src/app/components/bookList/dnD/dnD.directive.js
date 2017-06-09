@@ -42,10 +42,12 @@ export default function dragAndDropDirective(booksService, dragAndDropService) {
         el.addEventListener('dragend', function (event) {
             this.classList.remove('drag');
             if (dragAndDropService.remove === this.id) {
+                let parent = event.target.parentNode
                 //compare the id of element that enetered trash with the current dragged element's id
                 event.target.parentNode.removeChild(event.target); //removes the node from view
                 booksService.books.splice(this.id, 1); //removes the element from service data
-            }
+            console.log(parent, booksService.books);
+        }
 
             dragAndDropService.remove = null; //remove the id# of the removed element
         });
