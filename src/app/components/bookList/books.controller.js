@@ -5,10 +5,6 @@ export default class BooksCtrl {
     this.filterValue = '';
     this.uppercase = false;
   }
-
-  sorting (index) {
-    this.bookList.slice(index,1);
-  }
 }
 
 BooksCtrl.$inject = ['booksService'];  
