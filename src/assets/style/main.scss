@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
 @mixin center () {
 	display: flex;
 	justify-content: center;
@@ -6,6 +8,7 @@
 }
 
 html, body {
+  font-family: 'Lato', sans-serif;
   height: 100%;
   color: #000000;
   text-align: center;
@@ -13,10 +16,12 @@ html, body {
 }
 
 .main {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px 1px #ddd;
   min-height: 100%;
   @include center();
-  font-family: Arial, Helvetica, sans-serif;
   padding: 50px;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 20px auto;
 }

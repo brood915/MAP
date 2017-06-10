@@ -1,12 +1,13 @@
 .bookList {
     cursor: move;
+    font-size: 15px;
     span {
         font-weight: bold;
     }
 }
 
 .booksContainer {
-    margin: 10px;
+    margin-top: 30px;
     width: 100%;
 }
 

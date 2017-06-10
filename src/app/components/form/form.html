@@ -1,5 +1,6 @@
 <div class="formContainer">
 <form novalidate name="myForm">
+  <h3>Add a book</h3>
     <div class="form-group"
          ng-class = "{
            'has-success has-feedback' : (myForm.$dirty || myForm.$submitted) && myForm.title.$valid,
@@ -7,8 +8,7 @@
 
          }"
     >
-      <label for="text">Title:</label>
-      <input name = "title" type="text" class="form-control" ng-model="form.newBook.title" required />
+      <input placeholder='title' name = "title" type="text" class="form-control" ng-model="form.newBook.title" required />
       <p ng-if = "(myForm.$dirty || myForm.$submitted) && myForm.title.$invalid" class="text-danger">Please put the title</p>
       <span class="glyphicon form-control-feedback"
             ng-class = " {
@@ -24,8 +24,7 @@
 
          }"
     >
-      <label for="text">Author:</label>
-      <input name= "author" type="text" class="form-control" ng-model="form.newBook.author" required />
+      <input placeholder = 'author' name= "author" type="text" class="form-control" ng-model="form.newBook.author" required />
       <p ng-if = "(myForm.$dirty || myForm.$submitted) && myForm.author.$invalid" class="text-danger">Please put the author</p>
       <span class="glyphicon form-control-feedback"
             ng-class = " {
@@ -41,7 +40,6 @@
 
          }"
     >
-      <label for="text">Date:</label>
       <input name = "date" type="date" class="form-control" ng-model="form.newBook.date" required />
       <p ng-if = "(myForm.$dirty || myForm.$submitted) && myForm.date.$invalid" class="text-danger">Please put the date</p>
       <span class="glyphicon form-control-feedback"
