@@ -6,13 +6,15 @@ export default function dragAndDropDirective(dragAndDropService) {
         let el = element[0]; //get the div container of each book
         el.draggable = true; //make it draggable
 
-        function isBefore(a, b) {
-            for (let current = a; current; current = current.previousSibling) {
-                if (current === b) {
-                    return true;
+        function isAfter(a, b) { //a = dragged target. b = dragenter target.
+            let current = a;
+            while(current){
+                current = current.previousSibling //set current equal to its previous sibling node
+                if (current === b) { //compare it with the dragenter target
+                    return true; // This means the dragged target was originally below the dragenter target
                 }
             }
-            return false;
+            return false; //this means the dragged target was originally above the dragenter target
         }
 
         el.addEventListener('dragstart', function () {
@@ -22,12 +24,11 @@ export default function dragAndDropDirective(dragAndDropService) {
 
         el.addEventListener('dragenter', function (event) {
             let current = document.getElementById(dragAndDropService.dragged); //get the element being dragged
-            if (event.target.classList.contains('bookList')) {
-                //To disregard text nodes inside the container
-                if (isBefore(current, event.target)) {
+            if (event.target.classList.contains('bookList')) {//To disregard text nodes inside the container
+                if (isAfter(current, event.target)) { //current changes automatically as it dragenters different nodes
                     event.target.parentNode.insertBefore(current, event.target); //insert above target
                 } else {
-                    event.target.parentNode.insertBefore(current, event.target.nextSibling); //insert below target
+                    event.target.parentNode.insertBefore(current, event.target.nextSibling); //insert below target or same position
                 }
             }
         });
