@@ -5,9 +5,10 @@
         <div class="checkbox">
             <label id = "checkbox"><input type="checkbox" value="" ng-model="books.uppercase">Uppercase</label>
         </div>
+        <select ng-model="books.filterSelected" ng-options="x for x in books.selectOptions"/>
     </div>
     <div class="list-group">
-        <div id = "{{$index}}" class="list-group-item bookList" ng-repeat='book in books.bookList | filter: books.filterValue' drag-and-drop>
+        <div id = "{{$index}}" class="list-group-item bookList" ng-repeat="book in books.bookList | filter: books.filterValue | orderBy: books.filterSelected" drag-and-drop>
             <div class="bookInfo title"><span>Title:</span> {{books.uppercase ? (book.title | uppercase) : book.title}}</div>
             <div class="bookInfo"><span>Author:</span> {{book.author}}</div>
             <div class="bookInfo"><span>Date:</span> {{book.date}}</div>
