@@ -5,7 +5,8 @@ export default function formDirective () {
     template: require('./form.html'),
     controller,
     controllerAs: 'form',
-    replace: true
+    replace: true,
+    scope: {}
   }
 };
 

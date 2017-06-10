@@ -9,4 +9,4 @@ export default class BooksCtrl {
   }
 }
 
-BooksCtrl.$inject = ['booksService'];  
+BooksCtrl.$inject = ['booksService'];

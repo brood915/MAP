@@ -1,14 +1,13 @@
-.bookList  {
+.bookList {
     cursor: move;
-
     span {
-         font-weight:bold;
+        font-weight: bold;
     }
 }
 
 .booksContainer {
     margin: 10px;
-    flex: 2;
+    width: 100%;
 }
 
 #checkbox {
@@ -22,8 +21,4 @@
 //for dragAndDrop Effects
 .drag {
     opacity: 0.5;
-}
-
-.hide {
-    display:none;
 }

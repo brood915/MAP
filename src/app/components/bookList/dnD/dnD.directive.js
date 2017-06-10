@@ -19,7 +19,6 @@ export default function dragAndDropDirective(booksService, dragAndDropService) {
 
         el.addEventListener('dragstart', function (event) {
             dragAndDropService.dragged = this.id;
-
             this.classList.add('drag');
         });
 

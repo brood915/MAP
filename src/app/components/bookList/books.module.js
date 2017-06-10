@@ -4,13 +4,8 @@ import './bookList.scss';
 import booksService from './books.service';
 import dragAndDrop from './dnD/dnD.module';
 
-
-export default angular.module('booksModule', [dragAndDrop])
+export default angular
+    .module('booksModule', [dragAndDrop])
     .directive('books', booksDirective)
     .service('booksService', booksService)
     .name;
-
-
-
-
-
