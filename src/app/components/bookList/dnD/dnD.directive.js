@@ -20,6 +20,7 @@ export default function dragAndDropDirective(dragAndDropService) {
         el.addEventListener('dragstart', function () {
             dragAndDropService.dragged = this.id; //needed as each instance of this directive has different scopes
             this.classList.add('drag'); 
+            document.getElementById('selectOptions').classList.add('hide'); //hide sortBy options when dragged
         });
 
         el.addEventListener('dragenter', function (event) {

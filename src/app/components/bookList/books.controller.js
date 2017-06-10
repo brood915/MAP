@@ -3,7 +3,7 @@ export default class BooksCtrl {
     this.booksService = booksService;
     this.bookList = this.booksService.books;
     this.filterValue = '';
-    this.filterSelected = '';
+    this.sortBy = '';
     this.uppercase = false;
     this.selectOptions = ['title', 'author', 'date'];
   }
