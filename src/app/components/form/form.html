@@ -42,7 +42,7 @@
          }"
     >
       <label for="text">Date:</label>
-      <input name = "date" type="text" placeholder = "mm/dd/yyyy" class="form-control" ng-model="form.newBook.date" required />
+      <input name = "date" type="date" class="form-control" ng-model="form.newBook.date" required />
       <p ng-if = "(myForm.$dirty || myForm.$submitted) && myForm.date.$invalid" class="text-danger">Please put the date</p>
       <span class="glyphicon form-control-feedback"
             ng-class = " {
