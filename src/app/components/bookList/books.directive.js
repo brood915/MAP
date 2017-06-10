@@ -6,7 +6,8 @@ export default function booksDirective () {
     template: require('./books.html'),
     controller,
     controllerAs: 'books',
-    replace:true
+    replace:true,
+    scope: {}
   }
 };
 

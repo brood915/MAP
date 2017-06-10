@@ -19,14 +19,14 @@ export default function dragAndDropDirective(booksService, dragAndDropService) {
 
         el.addEventListener('dragstart', function (event) {
             dragAndDropService.dragged = this.id;
-            dragAndDropService.trashDragged = false; //dragging element is not trash
+
             this.classList.add('drag');
         });
 
         el.addEventListener('dragenter', function (event) {
             let current = document.getElementById(dragAndDropService.dragged);
-            if (event.target.classList.contains('bookList') && !dragAndDropService.trashDragged) {
-                //To disregard text nodes inside the container and trash
+            if (event.target.classList.contains('bookList')) {
+                //To disregard text nodes inside the container
                 if (isBefore(current, event.target)) {
                     event.target.parentNode.insertBefore(current, event.target);
                 } else {
@@ -41,15 +41,6 @@ export default function dragAndDropDirective(booksService, dragAndDropService) {
 
         el.addEventListener('dragend', function (event) {
             this.classList.remove('drag');
-            if (dragAndDropService.remove === this.id) {
-                let parent = event.target.parentNode
-                //compare the id of element that enetered trash with the current dragged element's id
-                event.target.parentNode.removeChild(event.target); //removes the node from view
-                booksService.books.splice(this.id, 1); //removes the element from service data
-            console.log(parent, booksService.books);
-        }
-
-            dragAndDropService.remove = null; //remove the id# of the removed element
         });
     };
 }
