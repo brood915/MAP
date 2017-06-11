@@ -9,7 +9,7 @@ export default function dragAndDropDirective(dragAndDropService) {
         function isAfter(a, b) { //a = dragged target. b = dragenter target.
             let current = a;
             while(current){
-                current = current.previousSibling //set current equal to its previous sibling node
+                current = current.previousSibling; //set current equal to its previous sibling node
                 if (current === b) { //compare it with the dragenter target
                     return true; // This means the dragged target was originally below the dragenter target
                 }
